@@ -55,12 +55,13 @@
 </nav>
 
 <!-- ============================================
-     HERO
+     HERO with photo
      ============================================ -->
-<section class="hero">
-  <div class="hero__bg"></div>
+<section class="hero hero--photo">
+  <img src="assets/img/studio-console.jpg" alt="Studio Nash Record — console d'enregistrement Saint-Cloud" class="hero__image">
+  <div class="hero__image-fade"></div>
   <div class="hero__noise"></div>
-  <div class="hero__inner">
+  <div class="hero__inner" style="position: relative; z-index: 2;">
     <p class="eyebrow">Studio Certifié Diamant · Saint-Cloud (92)</p>
     <h1 class="hero__title">Le studio qui a <em>fait diamant</em>.</h1>
     <p class="lead">Enregistrement, mix &amp; mastering. Beatmaker certifié disque de diamant. Mêmes outils, même oreille, même standard de production que sur les hits multi-millions de streams.</p>
@@ -130,6 +131,34 @@
     <p style="margin-top: 32px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; color: var(--color-text-faint); text-align: center;">
       STATS BEATMAKER NASH RECORD · MIEUX QUE 98% DE L'INDUSTRIE
     </p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================
+     GALERIE STUDIO
+     ============================================ -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header__title">
+        <p class="eyebrow">Le studio en images</p>
+        <h2>L'équipement</h2>
+      </div>
+    </div>
+
+    <div class="gallery reveal">
+      <div class="gallery__item gallery__item--wide">
+        <img src="assets/img/studio-manley.jpg" alt="Manley Voxbox — préampli studio Nash Record" loading="lazy">
+      </div>
+      <div class="gallery__item">
+        <img src="assets/img/studio-console.jpg" alt="Console studio Nash Record — monitoring pro" loading="lazy">
+      </div>
+      <div class="gallery__item">
+        <img src="assets/img/sultan-nash-studio.jpg" alt="DJ Sultan Nash en session studio Nash Record" loading="lazy">
+      </div>
+    </div>
   </div>
 </section>
 

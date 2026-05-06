@@ -60,12 +60,13 @@
 </nav>
 
 <!-- ============================================
-     HERO
+     HERO with photo
      ============================================ -->
-<section class="hero">
-  <div class="hero__bg"></div>
+<section class="hero hero--photo">
+  <img src="assets/img/sultan-nash-portrait.jpg" alt="DJ Sultan Nash — Malik Chelal, beatmaker certifié diamant" class="hero__image">
+  <div class="hero__image-fade"></div>
   <div class="hero__noise"></div>
-  <div class="hero__inner">
+  <div class="hero__inner" style="position: relative; z-index: 2;">
     <p class="eyebrow">Fondateur · Beatmaker · DJ · Producteur</p>
     <h1 class="hero__title">DJ <em>Sultan Nash</em></h1>
     <p style="font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.3em; color: var(--color-text-muted); margin: -16px 0 32px; text-transform: uppercase;">
@@ -115,12 +116,8 @@
     </div>
 
     <div class="spotlight reveal" style="background: linear-gradient(135deg, rgba(201, 169, 97, 0.15), rgba(48, 130, 220, 0.06));">
-      <div class="spotlight__cover" style="background: linear-gradient(135deg, #1e6dd6, #1a3a8a); display: flex; align-items: center; justify-content: center; padding: 48px;">
-        <div style="text-align: center;">
-          <div style="font-family: var(--font-display); font-size: clamp(48px, 8vw, 88px); color: white; line-height: 1; margin-bottom: 16px; letter-spacing: -0.04em;">Mi<br>Corazón</div>
-          <div style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.3em; color: rgba(255,255,255,0.85); margin-top: 24px;">DJ SEM FT MARWA LOUD</div>
-          <div style="margin-top: 32px; padding: 12px 24px; background: rgba(255,255,255,0.95); color: #1a3a8a; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; border-radius: var(--radius-sm); display: inline-block;">★ DIAMANT SNEP ★</div>
-        </div>
+      <div class="spotlight__cover">
+        <img src="assets/img/diamant-snep.jpg" alt="Certification Diamant SNEP — Mi Corazón DJ Sem feat Marwa Loud" class="spotlight__cover-img" loading="lazy">
       </div>
       <div class="spotlight__content">
         <p class="eyebrow">Single Diamant · 50 000 000+ streams</p>
@@ -166,6 +163,34 @@
       <div style="background: var(--color-bg-soft); border: 1px solid var(--color-line); border-radius: var(--radius-md); padding: 36px 28px; text-align: center;">
         <div style="font-family: var(--font-display); font-size: 48px; color: var(--color-accent); margin-bottom: 8px;">178</div>
         <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; color: var(--color-text-faint);">CRÉDITS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================
+     GALERIE SULTAN NASH
+     ============================================ -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header__title">
+        <p class="eyebrow">Univers visuel</p>
+        <h2>Sultan Nash, en images</h2>
+      </div>
+    </div>
+
+    <div class="gallery reveal">
+      <div class="gallery__item gallery__item--wide">
+        <img src="assets/img/sultan-nash-studio.jpg" alt="DJ Sultan Nash dans son studio Nash Record" loading="lazy">
+      </div>
+      <div class="gallery__item">
+        <img src="assets/img/sultan-nash-sofa.jpg" alt="DJ Sultan Nash — Malik Chelal, détente studio" loading="lazy">
+      </div>
+      <div class="gallery__item">
+        <img src="assets/img/mi-corazon-cover.jpg" alt="Mi Corazón — DJ Sem feat. Marwa Loud (prod. Malik Chelal)" loading="lazy">
       </div>
     </div>
   </div>
