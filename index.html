@@ -36,65 +36,14 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Courier+Prime&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
-<style>
-.mq-hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
-.mq-hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;transform:scale(1.05);animation:mqzoom 18s ease-out forwards}
-@keyframes mqzoom{to{transform:scale(1)}}
-.mq-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.2) 0%,rgba(10,10,10,.55) 55%,var(--color-bg) 100%)}
-.mq-hero__inner{position:relative;z-index:2;padding:0 16px 56px;width:100%;max-width:1280px;margin:0 auto}
-.mq-hero h1{font-family:var(--font-display);font-weight:400;font-size:clamp(52px,13vw,168px);line-height:.9;letter-spacing:-.02em;margin:16px 0 20px}
-.mq-hero h1 em{color:var(--color-accent)}
-.mq-hero p{max-width:560px;color:var(--color-text-muted);font-size:17px}
-.mq-stats{display:grid;grid-template-columns:1fr;border-top:1px solid var(--color-line);border-bottom:1px solid var(--color-line)}
-.mq-stat{padding:28px 16px;border-bottom:1px solid var(--color-line)}
-.mq-stat:last-child{border-bottom:0}
-.mq-stat__n{font-family:var(--font-display);font-size:clamp(44px,6vw,72px);color:var(--color-accent);line-height:1}
-.mq-stat__l{margin-top:10px;font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-text-muted);line-height:1.7}
-.mq-artists{display:grid;grid-template-columns:1fr;gap:16px}
-.mq-card{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;border-radius:var(--radius-md)}
-.mq-card img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
-.mq-card:hover img{transform:scale(1.05)}
-.mq-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(10,10,10,.92))}
-.mq-card__txt{position:absolute;z-index:2;left:24px;right:24px;bottom:24px}
-.mq-card__name{font-family:var(--font-display);font-size:clamp(36px,5vw,56px);line-height:1}
-.mq-card__tag{margin-top:10px;font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent)}
-.mq-offers{display:grid;grid-template-columns:1fr;gap:16px}
-.mq-offer{position:relative;overflow:hidden;border:1px solid var(--color-line-strong);border-radius:var(--radius-md);min-height:440px;display:flex;align-items:flex-end}
-.mq-offer>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35}
-.mq-offer__body{position:relative;padding:32px 24px;width:100%;background:linear-gradient(180deg,transparent,var(--color-bg) 70%)}
-.mq-offer h3{font-family:var(--font-display);font-size:44px;margin:8px 0 16px}
-.mq-price{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:24px}
-.mq-price b{display:block;font-family:var(--font-display);font-size:40px;color:var(--color-accent);font-weight:400}
-.mq-price span{font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;color:var(--color-text-muted)}
-.mq-news{display:grid;grid-template-columns:1fr;gap:16px}
-.mq-new{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:center;padding:16px;border:1px solid var(--color-line);border-radius:var(--radius-md);background:var(--color-bg-soft)}
-.mq-new img{width:96px;height:96px;object-fit:cover;border-radius:var(--radius-sm)}
-.mq-new h3{font-family:var(--font-display);font-size:24px;margin:4px 0}
-.mq-new p{font-size:14px;color:var(--color-text-muted)}
-.mq-sec{padding:72px 0}
-.mq-sec .container{padding-left:16px;padding-right:16px}
-@media(min-width:760px){
- .mq-stats{grid-template-columns:repeat(4,1fr)} .mq-stat{border-bottom:0;border-right:1px solid var(--color-line);padding:40px 32px} .mq-stat:last-child{border-right:0}
- .mq-artists{grid-template-columns:repeat(2,1fr)} .mq-offers{grid-template-columns:1fr 1fr} .mq-news{grid-template-columns:1fr 1fr}
- .mq-hero__inner{padding:0 32px 96px} .mq-sec{padding:120px 0}
-}
-@media(min-width:1100px){ .mq-artists{grid-template-columns:1.3fr 1fr} .mq-artists .mq-card:nth-child(4n+2),.mq-artists .mq-card:nth-child(4n+3){aspect-ratio:auto} }
-.mq-hero--logo{align-items:center;justify-content:center;text-align:center;background:radial-gradient(ellipse at 50% 40%,#1c1c1c 0%,#0a0a0a 70%)}
-.mq-hero--logo:after{background:repeating-linear-gradient(0deg,rgba(255,255,255,.015) 0 1px,transparent 1px 3px)}
-.mq-hero--logo .mq-hero__inner{padding:120px 16px 72px;display:flex;flex-direction:column;align-items:center}
-.mq-hero__nr{width:min(56vw,300px);height:auto}
-.mq-hero__word{width:min(82vw,560px);height:auto;margin-top:36px}
-.mq-hero .mq-hero__punch{font-family:var(--font-display);font-style:italic;font-size:clamp(24px,4vw,36px);color:var(--color-text);margin:12px auto 0;max-width:none}
-@keyframes mqfade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-</style>
 </head>
 <body>
 
 <nav class="nav" id="nav">
-  <a href="index.html" class="nav__logo"><img src="assets/img/nash-record-logo.png" alt="Nash Record" class="nav__logo-img"></a>
+  <a href="index.html" class="nav__logo"><img src="assets/img/logo/NASH_RECORD_NR_noir.svg" alt="Nash Record — accueil" class="nav__logo-img" width="44" height="33"></a>
   <ul class="nav__links" id="navLinks">
     <li><a href="index.html" class="active">Label</a></li>
     <li><a href="artistes.html">Artistes</a></li>
@@ -106,62 +55,185 @@
   <div class="nav__burger" id="burger"><span></span><span></span><span></span></div>
 </nav>
 
-
-<header class="mq-hero mq-hero--logo">
-  <div class="mq-hero__inner">
-    <img class="mq-hero__nr" src="assets/img/logo/NASH_RECORD_NR_blanc.svg" alt="Monogramme NR">
-    <img class="mq-hero__word" src="assets/img/logo/NASH_RECORD_nouveau_droit_blanc.svg" alt="Nash Record">
-    <p class="eyebrow" style="margin-top:32px">Label · Studio · Podcast</p>
-    <p class="mq-hero__punch">Le label certifié disque de Diamant.</p>
-    <div class="btn-group" style="margin-top:32px;justify-content:center"><a href="#artistes" class="btn btn--primary">Les artistes</a><a href="#booking" class="btn btn--ghost">Booking</a></div>
-  </div>
+<main id="contenu">
+<!-- ============================================
+     OUVERTURE : logo officiel sur la pochette
+     ============================================ -->
+<header class="sleeve">
+  <h1 class="sr-only">Nash Record — label indépendant, studio et podcast à Saint-Cloud</h1>
+  <img class="sleeve__logo" src="assets/img/logo/NASH_RECORD_NR_noir.svg" alt="Monogramme NR, Nash Record" width="300" height="223">
+  <img class="sleeve__word" src="assets/img/logo/NASH_RECORD_nouveau_droit_noir.svg" alt="Nash Record, Saint-Cloud · Paris" width="520" height="104">
+  <div class="sleeve__meta"><span>Maison de disques indépendante</span><span>Studio · Podcast</span><span>Certifié disque de Diamant</span></div>
+  <p class="lead">Chaque sortie a sa référence, sa pochette et ses crédits. Fouille dans le bac : touche une tranche pour sortir le disque et lire ses notes de pochette.</p>
+  <div class="btn-group" style="margin-top: 0;"><a href="#catalogue" class="btn btn--primary">Le catalogue</a><a href="#booking" class="btn btn--ghost">Booking</a></div>
 </header>
 
-<section class="mq-stats" aria-label="Chiffres clés">
-  <div class="mq-stat"><div class="mq-stat__n">297 M</div><div class="mq-stat__l">vues YouTube cumulées<br>19 productions Sultan Nash</div></div>
-  <div class="mq-stat"><div class="mq-stat__n">Diamant</div><div class="mq-stat__l">SNEP · « Mi Corazón »</div></div>
-  <div class="mq-stat"><div class="mq-stat__n">1,3 M</div><div class="mq-stat__l">abonnés Facebook<br>Fish Killa</div></div>
-  <div class="mq-stat"><div class="mq-stat__n">1 M</div><div class="mq-stat__l">streams Spotify · No Limit<br>Nommé Black Sphere Awards 2026</div></div>
-</section>
-
-<section class="mq-sec" id="artistes">
+<!-- ============================================
+     LE BAC
+     ============================================ -->
+<section id="catalogue" style="padding-top: 24px;">
   <div class="container">
-    <p class="eyebrow">Roster</p><h2 style="margin-bottom:40px">Les artistes</h2>
-    <div class="mq-artists">
-      <a href="fish-killa.html" class="mq-card"><img src="assets/img/fish-killa-portrait.jpg" alt="Fish Killa" loading="lazy" style="object-position:top center"><div class="mq-card__txt"><div class="mq-card__name">Fish Killa</div><div class="mq-card__tag">Afro-international · No Limit</div></div></a>
-      <a href="el-kapell.html" class="mq-card"><img src="assets/img/el-kapell-portrait.jpg" alt="El Kapell" loading="lazy" style="object-position:top center"><div class="mq-card__txt"><div class="mq-card__name">El Kapell</div><div class="mq-card__tag">Rap / Raï urbain · Mahboul</div></div></a>
-      <a href="lola-rivera.html" class="mq-card"><img src="assets/img/lola-rooftop.jpg" alt="Lola Rivera" loading="lazy" style="object-position:top center"><div class="mq-card__txt"><div class="mq-card__name">Lola Rivera</div><div class="mq-card__tag">Pop latina · Vamos Vamos</div></div></a>
-      <a href="sultan-nash.html" class="mq-card"><img src="assets/img/sultan-nash-pro.jpg" alt="DJ Sultan Nash" loading="lazy" style="object-position:top center"><div class="mq-card__txt"><div class="mq-card__name">DJ Sultan Nash</div><div class="mq-card__tag">Fondateur · Producteur · Diamant</div></div></a>
+    <div class="shelf__head"><h2>Le bac</h2><span class="ref">5 références</span></div>
+    <div class="crate" role="group" aria-label="Disques du catalogue Nash Record">
+      <button type="button" class="rec" aria-pressed="false" data-notes="notes-mi-corazon" aria-label="DJ Sem — Mi Corazón : afficher les notes de pochette">
+        <span class="rec__spine"><span class="dot"></span><span class="t">Mi Corazón</span><span class="a">DJ Sem</span><span class="ref" data-cat="mi-corazon">NR</span></span>
+        <span class="rec__cover"><img src="assets/img/mi-corazon-cover.jpg" alt="" loading="lazy" width="260" height="260"></span>
+      </button>
+      <button type="button" class="rec" aria-pressed="false" data-notes="notes-mahboul" aria-label="El Kapell — Mahboul : afficher les notes de pochette">
+        <span class="rec__spine"><span class="dot"></span><span class="t">Mahboul</span><span class="a">El Kapell</span><span class="ref" data-cat="mahboul">NR</span></span>
+        <span class="rec__cover"><img src="assets/img/cover-el-kapell-800.jpg" alt="" loading="lazy" width="260" height="260"></span>
+      </button>
+      <button type="button" class="rec" aria-pressed="false" data-notes="notes-un-beso" aria-label="Lola Rivera — Un Beso : afficher les notes de pochette">
+        <span class="rec__spine"><span class="dot"></span><span class="t">Un Beso</span><span class="a">Lola Rivera</span><span class="ref" data-cat="un-beso">NR</span></span>
+        <span class="rec__cover"><img src="assets/img/cover-un-beso-800.jpg" alt="" loading="lazy" width="260" height="260"></span>
+      </button>
+      <button type="button" class="rec" aria-pressed="false" data-notes="notes-no-limit" aria-label="Fish Killa — No Limit : afficher les notes de pochette">
+        <span class="rec__spine"><span class="dot"></span><span class="t">No Limit</span><span class="a">Fish Killa</span><span class="ref" data-cat="no-limit">NR</span></span>
+        <span class="rec__cover"><img src="assets/img/fish-killa-cover%20no%20limit.jpg" alt="" loading="lazy" width="260" height="260"></span>
+      </button>
+      <button type="button" class="rec" aria-pressed="false" data-notes="notes-vamos-vamos" aria-label="Lola Rivera — Vamos Vamos : afficher les notes de pochette">
+        <span class="rec__spine"><span class="dot"></span><span class="t">Vamos Vamos</span><span class="a">Lola Rivera</span><span class="ref" data-cat="vamos-vamos">NR</span></span>
+        <span class="rec__cover"><img src="assets/img/lola%20rivera%20-%20vamos%20cover%20copie.jpg" alt="" loading="lazy" width="260" height="260"></span>
+      </button>
+    </div>
+    <article class="liner" id="liner" aria-live="polite"></article>
+  </div>
+</section>
+<template id="notes-mi-corazon">
+  <div><img class="liner__cover" src="assets/img/mi-corazon-cover.jpg" alt="Pochette Mi Corazón — DJ Sem feat. Marwa Loud" loading="lazy"></div>
+  <div>
+    <p class="ref" data-cat="mi-corazon">NR</p>
+    <h3>Mi Corazón</h3>
+    <p><strong>DJ Sem feat. Marwa Loud</strong> · notes de pochette</p>
+    <dl><dt>Artiste</dt><dd>DJ Sem feat. Marwa Loud</dd><dt>Production</dt><dd>Malik Chelal (DJ Sultan Nash)</dd><dt>Année</dt><dd>2017</dd><dt>Certification</dt><dd>Disque de Diamant SNEP · 50 M+ streams</dd><dt>Clip</dt><dd>257 M de vues YouTube</dd></dl>
+    <div class="btn-group" style="margin-top: 20px;"><a class="btn btn--primary" href="sultan-nash.html">Fiche producteur</a><a class="btn btn--ghost" href="#booking">Booking</a></div>
+  </div>
+</template>
+<template id="notes-mahboul">
+  <div><img class="liner__cover" src="assets/img/cover-el-kapell-800.jpg" alt="Pochette Mahboul — El Kapell" loading="lazy"></div>
+  <div>
+    <p class="ref" data-cat="mahboul">NR</p>
+    <h3>Mahboul</h3>
+    <p><strong>El Kapell</strong> · notes de pochette</p>
+    <dl><dt>Artiste</dt><dd>El Kapell</dd><dt>Production</dt><dd>DJ Sultan (Nash Record)</dd><dt>Genre</dt><dd>Rap · Raï urbain</dd><dt>Radio</dt><dd>#1 Beur FM</dd><dt>Origine</dt><dd>Bezons (95)</dd></dl>
+    <div class="btn-group" style="margin-top: 20px;"><a class="btn btn--primary" href="el-kapell.html">Fiche artiste</a><a class="btn btn--ghost" href="#booking">Booking</a></div>
+  </div>
+</template>
+<template id="notes-un-beso">
+  <div><img class="liner__cover" src="assets/img/cover-un-beso-800.jpg" alt="Pochette Un Beso — Lola Rivera" loading="lazy"></div>
+  <div>
+    <p class="ref" data-cat="un-beso">NR</p>
+    <h3>Un Beso</h3>
+    <p><strong>Lola Rivera</strong> · notes de pochette</p>
+    <dl><dt>Artiste</dt><dd>Lola Rivera</dd><dt>Label</dt><dd>Nash Record</dd><dt>Sortie</dt><dd>1er mai 2026</dd><dt>Genre</dt><dd>Pop latina · ballade</dd></dl>
+    <div class="btn-group" style="margin-top: 20px;"><a class="btn btn--primary" href="un-beso.html">Fiche du single</a><a class="btn btn--ghost" href="#booking">Booking</a></div>
+  </div>
+</template>
+<template id="notes-no-limit">
+  <div><img class="liner__cover" src="assets/img/fish-killa-cover%20no%20limit.jpg" alt="Pochette No Limit — Fish Killa" loading="lazy"></div>
+  <div>
+    <p class="ref" data-cat="no-limit">NR</p>
+    <h3>No Limit</h3>
+    <p><strong>Fish Killa</strong> · notes de pochette</p>
+    <dl><dt>Artiste</dt><dd>Fish Killa aka Maître Hitman</dd><dt>Format</dt><dd>Album · 24 titres (édition CD)</dd><dt>Sortie</dt><dd>26 mai 2026</dd><dt>Featurings</dt><dd>Stonebwoy, Black M, Sidiki Diabaté, Hiro, Takana Zion…</dd><dt>Label</dt><dd>Nash Record × Tewe Prod</dd><dt>Streams</dt><dd>1 M+ sur Spotify</dd></dl>
+    <div class="btn-group" style="margin-top: 20px;"><a class="btn btn--primary" href="fish-killa.html">Fiche de l'album</a><a class="btn btn--ghost" href="#booking">Booking</a></div>
+  </div>
+</template>
+<template id="notes-vamos-vamos">
+  <div><img class="liner__cover" src="assets/img/lola%20rivera%20-%20vamos%20cover%20copie.jpg" alt="Pochette Vamos Vamos — Lola Rivera" loading="lazy"></div>
+  <div>
+    <p class="ref" data-cat="vamos-vamos">NR</p>
+    <h3>Vamos Vamos</h3>
+    <p><strong>Lola Rivera</strong> · notes de pochette</p>
+    <dl><dt>Artiste</dt><dd>Lola Rivera</dd><dt>Label</dt><dd>Nash Record</dd><dt>Année</dt><dd>2026</dd><dt>Format</dt><dd>Single · clip</dd></dl>
+    <div class="btn-group" style="margin-top: 20px;"><a class="btn btn--primary" href="lola-rivera.html">Fiche artiste</a><a class="btn btn--ghost" href="#booking">Booking</a></div>
+  </div>
+</template>
+
+<!-- ============================================
+     DIAMANT ENCADRÉ
+     ============================================ -->
+<section style="border-top: 3px solid var(--ink);">
+  <div class="container frame-obj">
+    <figure class="frame">
+      <div class="frame__mat">
+        <div class="diamond-disc" role="img" aria-label="Disque de Diamant encadré"></div>
+        <figcaption class="frame__plate">Disque de Diamant · SNEP<br>« Mi Corazón » — DJ Sem feat. Marwa Loud<br>Prod. Malik Chelal · 2017</figcaption>
+      </div>
+    </figure>
+    <div>
+      <p class="ref"><span data-cat="mi-corazon">NR</span> · Production Sultan Nash</p>
+      <h2>Diamant<br>au mur</h2>
+      <p class="lead" style="margin: 16px 0;">50 millions de streams, 257 millions de vues pour le clip. Le point de départ du catalogue.</p>
+      <a class="btn btn--primary" href="sultan-nash.html">Les certifications</a>
     </div>
   </div>
 </section>
 
-<section class="mq-sec" style="padding-top:0">
+<!-- ============================================
+     CHIFFRES
+     ============================================ -->
+<section style="padding-top: 0;">
   <div class="container">
-    <p class="eyebrow">Services</p><h2 style="margin-bottom:40px">Studio &amp; Podcast</h2>
-    <div class="mq-offers">
-      <div class="mq-offer"><img src="assets/img/studio-console.jpg" alt="" loading="lazy"><div class="mq-offer__body">
-        <p class="eyebrow">Enregistrement</p><h3>Studio</h3>
-        <div class="mq-price"><div><b>80 €</b><span>2 HEURES</span></div><div><b>150 €</b><span>4 HEURES</span></div></div>
-        <div class="btn-group"><a href="https://wa.me/33652409631?text=Bonjour%2C%20je%20veux%20r%C3%A9server%20le%20studio" target="_blank" rel="noopener" class="btn btn--primary">Réserver le studio</a><a href="studio.html" class="btn btn--ghost">Voir le studio</a></div>
+    <div class="facts" aria-label="Chiffres clés">
+      <div><b>297 M</b><small>vues YouTube cumulées · 19 productions Sultan Nash</small></div>
+      <div><b>Diamant</b><small>SNEP · « Mi Corazón »</small></div>
+      <div><b>1,3 M</b><small>abonnés Facebook · Fish Killa</small></div>
+      <div><b>1 M+</b><small>streams Spotify · No Limit · nommé Black Sphere Awards 2026</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     ARTISTES
+     ============================================ -->
+<section id="artistes" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header__title"><p class="eyebrow">Roster</p><h2>Au catalogue</h2></div>
+      <a href="artistes.html" class="section-header__cta">Tous les artistes →</a>
+    </div>
+    <div class="roster">
+      <a href="fish-killa.html" class="artist-card"><img src="assets/img/fish-killa-portrait.jpg" alt="Fish Killa" class="artist-card__photo" loading="lazy"><div class="artist-card__overlay"><div class="artist-card__name">Fish Killa</div><div class="artist-card__tag">Afro-international · <span data-cat="no-limit">NR</span></div></div></a>
+      <a href="el-kapell.html" class="artist-card"><img src="assets/img/el-kapell-portrait.jpg" alt="El Kapell" class="artist-card__photo" loading="lazy"><div class="artist-card__overlay"><div class="artist-card__name">El Kapell</div><div class="artist-card__tag">Rap / raï urbain · <span data-cat="mahboul">NR</span></div></div></a>
+      <a href="lola-rivera.html" class="artist-card"><img src="assets/img/lola-rooftop.jpg" alt="Lola Rivera" class="artist-card__photo" loading="lazy"><div class="artist-card__overlay"><div class="artist-card__name">Lola Rivera</div><div class="artist-card__tag">Pop latina · <span data-cat="un-beso">NR</span> · <span data-cat="vamos-vamos">NR</span></div></div></a>
+      <a href="sultan-nash.html" class="artist-card"><img src="assets/img/sultan-nash-pro.jpg" alt="DJ Sultan Nash" class="artist-card__photo" loading="lazy"><div class="artist-card__overlay"><div class="artist-card__name">DJ Sultan Nash</div><div class="artist-card__tag">Producteur · fondateur · <span data-cat="mi-corazon">NR</span></div></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     STUDIO & PODCAST
+     ============================================ -->
+<section style="padding-top: 0;">
+  <div class="container">
+    <div class="section-header"><div class="section-header__title"><p class="eyebrow">Services</p><h2>Studio &amp; podcast</h2></div></div>
+    <div class="offers">
+      <div class="offer"><img src="assets/img/studio-console.jpg" alt="Console du studio Nash Record" loading="lazy"><div class="offer__body">
+        <h3>Studio</h3>
+        <div class="offer__prices"><div class="price-tag"><b>80 €</b><span>2 heures</span></div><div class="price-tag"><b>150 €</b><span>4 heures</span></div></div>
+        <div class="btn-group" style="margin-top: 16px;"><a href="https://wa.me/33652409631?text=Bonjour%2C%20je%20veux%20r%C3%A9server%20le%20studio" target="_blank" rel="noopener" class="btn btn--primary">Réserver le studio</a><a href="studio.html" class="btn btn--ghost">Voir le studio</a></div>
       </div></div>
-      <div class="mq-offer"><img src="assets/img/podcast-studio.jpg" alt="" loading="lazy"><div class="mq-offer__body">
-        <p class="eyebrow">Plateau vidéo</p><h3>Podcast</h3>
-        <div class="mq-price"><div><b>100 €</b><span>PAR HEURE</span></div></div>
-        <div class="btn-group"><a href="https://wa.me/33652409631?text=Bonjour%2C%20je%20veux%20r%C3%A9server%20le%20plateau%20podcast" target="_blank" rel="noopener" class="btn btn--primary">Réserver le podcast</a><a href="podcast.html" class="btn btn--ghost">Voir le plateau</a></div>
+      <div class="offer"><img src="assets/img/podcast-studio.jpg" alt="Plateau podcast Nash Record" loading="lazy"><div class="offer__body">
+        <h3>Podcast</h3>
+        <div class="offer__prices"><div class="price-tag"><b>100 €</b><span>par heure</span></div></div>
+        <div class="btn-group" style="margin-top: 16px;"><a href="https://wa.me/33652409631?text=Bonjour%2C%20je%20veux%20r%C3%A9server%20le%20plateau%20podcast" target="_blank" rel="noopener" class="btn btn--primary">Réserver le podcast</a><a href="podcast.html" class="btn btn--ghost">Voir le plateau</a></div>
       </div></div>
     </div>
   </div>
 </section>
 
-<section class="mq-sec" style="padding-top:0">
+<!-- ============================================
+     ACTUS
+     ============================================ -->
+<section style="padding-top: 0;">
   <div class="container">
-    <p class="eyebrow">Actus</p><h2 style="margin-bottom:40px">Ça bouge au label</h2>
-    <div class="mq-news">
-      <a class="mq-new" href="fish-killa.html"><img src="assets/img/fish-killa-cover%20no%20limit.jpg" alt="" loading="lazy"><div><p class="eyebrow">Album · Fish Killa</p><h3>No Limit est sorti</h3><p>18 titres avec Stonebwoy, Black M, Sidiki Diabaté.</p></div></a>
-      <a class="mq-new" href="fish-killa.html"><img src="assets/img/fish-killa-hit-kankira-600.jpg" alt="" loading="lazy"><div><p class="eyebrow">Jeu · Fish Killa</p><h3>Mission No Limit</h3><p>Le jeu 8-bit de Conakry aux Champs-Élysées.</p></div></a>
-      <a class="mq-new" href="lola-rivera.html"><img src="assets/img/lola%20rivera%20-%20vamos%20cover%20copie.jpg" alt="" loading="lazy"><div><p class="eyebrow">Single · Lola Rivera</p><h3>Vamos Vamos</h3><p>Le nouveau single, clip disponible.</p></div></a>
-      <a class="mq-new" href="el-kapell.html"><img src="assets/img/cover-el-kapell-800.jpg" alt="" loading="lazy"><div><p class="eyebrow">Album · El Kapell</p><h3>Premier album</h3><p>Après « Mahboul », #1 Beur FM.</p></div></a>
+    <div class="section-header"><div class="section-header__title"><p class="eyebrow">Actus</p><h2>Ça bouge au label</h2></div></div>
+    <div class="news">
+      <a class="news__item" href="fish-killa.html"><img src="assets/img/fish-killa-cover%20no%20limit.jpg" alt="" loading="lazy"><div><p class="ref" data-cat="no-limit">NR</p><h3>No Limit est sorti</h3><p>Fish Killa · 24 titres (édition CD) avec Stonebwoy, Black M, Sidiki Diabaté.</p></div></a>
+      <a class="news__item" href="fish-killa.html"><img src="assets/img/fish-killa-hit-kankira-600.jpg" alt="" loading="lazy"><div><p class="ref">Jeu</p><h3>Mission No Limit</h3><p>Le jeu 8-bit de Conakry aux Champs-Élysées.</p></div></a>
+      <a class="news__item" href="lola-rivera.html"><img src="assets/img/lola%20rivera%20-%20vamos%20cover%20copie.jpg" alt="" loading="lazy"><div><p class="ref" data-cat="vamos-vamos">NR</p><h3>Vamos Vamos</h3><p>Le nouveau single de Lola Rivera, clip disponible.</p></div></a>
+      <a class="news__item" href="el-kapell.html"><img src="assets/img/cover-el-kapell-800.jpg" alt="" loading="lazy"><div><p class="ref" data-cat="mahboul">NR</p><h3>Premier album</h3><p>El Kapell, après « Mahboul », #1 Beur FM.</p></div></a>
     </div>
   </div>
 </section>
@@ -206,6 +278,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- Footer -->
 <footer class="footer" id="contact">
