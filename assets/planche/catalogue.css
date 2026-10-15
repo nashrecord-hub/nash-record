@@ -1,0 +1,112 @@
+/* PLANCHE « LE CATALOGUE » — maquette non publiée
+   Papier de pochette (kraft), encre d'impression, une couleur d'étiquette.
+   Archivo (étroit) = typo de tranche et de pochette imprimée ;
+   Courier Prime = numéros de catalogue tapés à la machine, réservé aux références. */
+:root{
+  --kraft:#d8ccb4; --kraft-dark:#c4b597; --paper:#efe8da; --ink:#17140f; --ink-soft:#4a4338;
+  --label:#d9381e; --rule:rgba(23,20,15,.22);
+  --f-print:"Archivo",system-ui,sans-serif; --f-type:"Courier Prime","Courier New",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--kraft);color:var(--ink);font-family:var(--f-print);font-size:16px;line-height:1.5;
+  background-image:radial-gradient(rgba(23,20,15,.06) 1px,transparent 1px);background-size:3px 3px}
+a{color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--label);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+.ref{font-family:var(--f-type);font-size:14px;letter-spacing:0}
+.badge{position:fixed;z-index:50;right:12px;bottom:12px;background:var(--label);color:var(--paper);font:700 12px var(--f-print);text-transform:uppercase;padding:6px 10px;transform:rotate(-3deg);box-shadow:2px 2px 0 var(--ink)}
+
+/* En-tête : étiquette de pochette */
+.mast{border-bottom:3px solid var(--ink);padding:14px 0}
+.mast .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.mast__logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.mast__logo img{width:44px;height:auto}
+.mast__logo b{font:800 15px/1 var(--f-print);font-stretch:75%;text-transform:uppercase}
+.mast nav ul{list-style:none;display:flex;gap:14px;flex-wrap:wrap;font:600 14px var(--f-print);font-stretch:85%;text-transform:uppercase}
+.mast nav a{text-decoration:none;border-bottom:2px solid transparent}
+.mast nav a:hover,.mast nav a[aria-current]{border-color:var(--label)}
+.nav-toggle{display:none}
+@media(max-width:700px){.mast .wrap{flex-wrap:wrap}.mast nav{width:100%}.mast nav ul{gap:6px 14px;font-size:13px}}
+
+/* Titre d'ouverture : recto de pochette */
+.sleeve{display:grid;gap:24px;padding:40px 0 32px}
+.sleeve h1{font:900 clamp(56px,15vw,176px)/.82 var(--f-print);font-stretch:62%;text-transform:uppercase;letter-spacing:-.01em}
+.sleeve h1 span{color:var(--label)}
+.sleeve__meta{display:flex;flex-wrap:wrap;gap:8px 24px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:10px 0;font-weight:600;font-stretch:85%;text-transform:uppercase;font-size:14px}
+.sleeve p.intro{max-width:620px;font-size:19px;font-stretch:95%}
+.note{font-size:13px;color:var(--ink-soft);font-style:normal;border-left:3px solid var(--label);padding-left:10px;max-width:620px}
+
+/* Étagère / bac */
+.shelf{margin:16px 0 0}
+.shelf__head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px}
+.shelf__head h2{font:800 28px/1 var(--f-print);font-stretch:70%;text-transform:uppercase}
+.crate{position:relative;display:flex;align-items:flex-end;gap:4px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;padding:120px 4px 0;
+  border-bottom:14px solid var(--ink);box-shadow:0 10px 0 var(--kraft-dark)}
+.rec{flex:0 0 auto;scroll-snap-align:start;position:relative;width:52px;height:280px;border:0;background:none;cursor:pointer;text-align:left;color:var(--paper);transition:width .35s}
+.rec__spine{position:absolute;inset:0;background:var(--ink);display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:10px 0;border-right:1px solid rgba(255,255,255,.12)}
+.rec__spine .t{writing-mode:vertical-rl;transform:rotate(180deg);font:800 17px/1 var(--f-print);font-stretch:70%;text-transform:uppercase;white-space:nowrap}
+.rec__spine .ref{writing-mode:vertical-rl;transform:rotate(180deg);font-size:12px;color:var(--kraft)}
+.rec__spine .dot{width:14px;height:14px;border-radius:50%;background:var(--label)}
+.rec:nth-child(3n+2) .rec__spine{background:#2c2620}
+.rec:nth-child(3n) .rec__spine{background:var(--paper);color:var(--ink)}
+.rec:nth-child(3n) .rec__spine .ref{color:var(--ink-soft)}
+.rec__cover{position:absolute;left:0;bottom:0;width:260px;height:260px;opacity:0;pointer-events:none;transform:translateY(0);transition:transform .35s,opacity .2s;box-shadow:6px 6px 0 rgba(23,20,15,.35);z-index:3}
+.rec__cover img{width:100%;height:100%;object-fit:cover}
+.rec[aria-pressed="true"]{width:268px}
+.rec[aria-pressed="true"] .rec__cover{opacity:1;transform:translateY(-100px)}
+@media(hover:hover){.rec:hover .rec__cover{opacity:1;transform:translateY(-100px)} .rec:hover{width:268px}}
+@media(prefers-reduced-motion:reduce){.rec,.rec__cover{transition:none}}
+
+/* Livret / liner notes */
+.liner{display:grid;gap:24px;background:var(--paper);border:1px solid var(--ink);padding:24px;margin:40px 0;box-shadow:8px 8px 0 var(--ink)}
+.liner h3{font:900 clamp(34px,7vw,64px)/.9 var(--f-print);font-stretch:62%;text-transform:uppercase}
+.liner dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:15px}
+.liner dt{font-weight:700;font-stretch:85%;text-transform:uppercase}
+.liner dd{border-bottom:1px dotted var(--rule)}
+.liner .cta{display:inline-block;margin-top:16px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:700;text-transform:uppercase;font-stretch:85%;padding:12px 18px}
+.liner .cta--alt{background:none;color:var(--ink);border:2px solid var(--ink);margin-left:8px}
+@media(min-width:860px){.liner{grid-template-columns:320px 1fr;padding:40px}}
+
+/* Étiquette rond central + code-barres */
+.label-disc{width:100%;max-width:300px;aspect-ratio:1;border-radius:50%;position:relative;
+  background:radial-gradient(circle,var(--kraft) 0 2.5%,var(--label) 2.8% 33%,#0e0c0a 33.5% 35%,transparent 35.5%),repeating-radial-gradient(circle,#1d1915 0 2px,#2a241d 2px 3px)}
+.label-disc span{position:absolute;left:36%;color:var(--paper);font:800 13px/1.1 var(--f-print);font-stretch:70%;text-transform:uppercase;text-align:center;width:28%}
+.label-disc span.top{top:36%}
+.label-disc span.bot{bottom:36%;font-family:var(--f-type);font-weight:400}
+.barcode{display:inline-flex;flex-direction:column;align-items:center;background:var(--paper);padding:8px 10px;border:1px solid var(--ink)}
+.barcode i{display:block;height:44px;width:150px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 8px,var(--ink) 8px 11px,transparent 11px 12px)}
+.barcode .ref{font-size:12px;margin-top:4px}
+
+/* Objet : disque de diamant encadré */
+.frame-obj{display:grid;gap:28px;align-items:center;padding:48px 0;border-top:3px solid var(--ink)}
+.frame{background:#2b2620;padding:22px;box-shadow:inset 0 0 0 6px #3b342b,10px 12px 0 rgba(23,20,15,.4);max-width:420px}
+.frame__mat{background:var(--paper);padding:20px;display:grid;gap:14px;justify-items:center}
+.diamond-disc{width:100%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,var(--paper) 0 3%,#d6dadd 3.5% 30%,#8e969c 30.5% 31.5%,transparent 32%),repeating-radial-gradient(circle,#e4e8eb 0 1px,#c3c9ce 1px 3px)}
+.frame__plate{background:var(--ink);color:var(--paper);text-align:center;padding:8px 12px;font-size:13px;font-weight:600;text-transform:uppercase;font-stretch:85%;line-height:1.3}
+.frame-obj h2{font:900 clamp(40px,9vw,96px)/.85 var(--f-print);font-stretch:62%;text-transform:uppercase}
+@media(min-width:860px){.frame-obj{grid-template-columns:420px 1fr;gap:56px}}
+
+/* Chiffres : bas de livret, colonnes imprimées */
+.facts{display:grid;grid-template-columns:1fr 1fr;border-top:3px solid var(--ink);border-bottom:1px solid var(--ink)}
+.facts div{padding:16px 12px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.facts b{display:block;font:900 clamp(34px,8vw,64px)/1 var(--f-print);font-stretch:62%}
+.facts small{font-size:13px;font-weight:600;text-transform:uppercase;font-stretch:85%}
+@media(min-width:860px){.facts{grid-template-columns:repeat(4,1fr)}}
+
+/* Tracklist façon dos de pochette */
+.back{background:var(--ink);color:var(--paper);padding:28px 20px;margin:40px 0}
+.back h2{font:900 40px/1 var(--f-print);font-stretch:62%;text-transform:uppercase;margin-bottom:16px}
+.back ol{list-style:none;columns:1;column-gap:40px;counter-reset:t}
+.back li{break-inside:avoid;display:grid;grid-template-columns:34px 1fr;padding:6px 0;border-bottom:1px solid rgba(239,232,218,.15);font-size:15px}
+.back li:before{counter-increment:t;content:counter(t,decimal-leading-zero);font-family:var(--f-type);color:var(--label)}
+.back li em{font-style:normal;color:var(--kraft-dark);font-size:13px;display:block}
+.back__foot{display:flex;flex-wrap:wrap;gap:16px;align-items:end;justify-content:space-between;margin-top:20px;font-size:12px;text-transform:uppercase;color:var(--kraft-dark)}
+@media(min-width:760px){.back ol{columns:2}.back{padding:40px}}
+
+.section{padding:40px 0}
+.section h2.big{font:900 clamp(40px,9vw,88px)/.85 var(--f-print);font-stretch:62%;text-transform:uppercase;margin-bottom:16px}
+.foot{border-top:3px solid var(--ink);padding:24px 0 72px;font-size:14px}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
