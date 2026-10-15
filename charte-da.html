@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charte graphique — Nash Record</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<style>
+.da{max-width:1180px;margin:0 auto;padding:0 16px}
+.da-top{padding:72px 0 48px;border-bottom:1px solid var(--color-line);text-align:center}
+.da-top img{width:min(40vw,160px);margin:0 auto}
+.da-top h1{font-family:var(--font-display);font-weight:400;font-size:clamp(44px,8vw,96px);margin:24px 0 8px}
+.da-toc{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:center;margin-top:24px;font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+.da-toc a{color:var(--color-accent)}
+.da-s{padding:64px 0;border-bottom:1px solid var(--color-line)}
+.da-s>h2{font-family:var(--font-display);font-weight:400;font-size:clamp(36px,5vw,56px);margin:8px 0 12px}
+.da-s>p.intro{color:var(--color-text-muted);max-width:720px;margin-bottom:32px}
+.da-grid{display:grid;grid-template-columns:1fr;gap:16px}
+.da-tile{border:1px solid var(--color-line);border-radius:var(--radius-md);padding:32px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;min-height:220px;text-align:center}
+.da-tile img{max-width:80%;max-height:120px}
+.da-tile small,.da-note{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--color-text-muted);text-transform:uppercase}
+.da-tile--dark{background:#0a0a0a} .da-tile--light{background:#f5f5f5} .da-tile--light small{color:#555}
+.da-zone{position:relative;display:inline-block;padding:40px;outline:1px dashed var(--color-accent);background:repeating-linear-gradient(45deg,rgba(201,169,97,.08) 0 6px,transparent 6px 12px)}
+.da-zone img{display:block;width:160px;background:#0a0a0a;padding:0}
+.da-donts{display:grid;grid-template-columns:1fr;gap:12px}
+.da-dont{border:1px solid rgba(230,57,70,.4);border-radius:var(--radius-sm);padding:16px;color:var(--color-text-muted);font-size:14px}
+.da-dont b{color:#e63946;font-family:var(--font-mono);font-size:11px;letter-spacing:.15em;display:block;margin-bottom:4px}
+.da-sw{display:flex;flex-direction:column;gap:4px;font-size:13px}
+.da-sw__c{height:96px;border:1px solid var(--color-line-strong);border-radius:var(--radius-sm);margin-bottom:8px}
+.da-sw code{font-family:var(--font-mono);font-size:12px;color:var(--color-text-muted)}
+.da-sw span{color:var(--color-text-faint);font-size:12px}
+.da-pal{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.da-type{border:1px solid var(--color-line);border-radius:var(--radius-md);padding:28px;margin-bottom:16px}
+.da-type__meta{font-family:var(--font-mono);font-size:11px;letter-spacing:.15em;color:var(--color-accent);text-transform:uppercase;margin-bottom:12px}
+.da-space{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.da-space div{background:var(--color-accent);opacity:.8}
+.da-space span{display:block;font-family:var(--font-mono);font-size:11px;color:var(--color-text-muted);margin-top:6px;text-align:center}
+.da-tone{display:grid;grid-template-columns:1fr;gap:16px}
+.da-tone div{background:var(--color-bg-soft);border:1px solid var(--color-line);border-radius:var(--radius-md);padding:24px}
+.da-tone h3{font-family:var(--font-display);font-size:26px;margin-bottom:8px}
+.da-tone p{color:var(--color-text-muted);font-size:15px}
+.da-mark{position:fixed;bottom:12px;left:12px;z-index:100;font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;background:var(--color-accent);color:#0a0a0a;padding:6px 10px;border-radius:var(--radius-sm)}
+@media(min-width:760px){.da-grid{grid-template-columns:repeat(3,1fr)} .da-pal{grid-template-columns:repeat(5,1fr)} .da-donts{grid-template-columns:repeat(3,1fr)} .da-tone{grid-template-columns:repeat(3,1fr)} .da-s{padding:96px 0}}
+</style>
+</head>
+<body>
+<div class="da-mark">MAQUETTE · CHARTE INTERNE</div>
+<div class="da">
+
+<header class="da-top">
+  <img src="assets/img/logo/NASH_RECORD_NR_blanc.svg" alt="Monogramme NR">
+  <h1>Charte graphique</h1>
+  <p class="eyebrow">Nash Record · Direction artistique du site · v1</p>
+  <nav class="da-toc"><a href="#logo">Logo</a><a href="#couleurs">Couleurs</a><a href="#typo">Typographies</a><a href="#composants">Boutons &amp; cartes</a><a href="#espaces">Espacements</a><a href="#ton">Ton</a></nav>
+</header>
+
+<section class="da-s" id="logo">
+  <p class="eyebrow">01 · Logo</p><h2>Le logo et ses déclinaisons</h2>
+  <p class="intro">Fichiers officiels vectorisés (SVG) dans <code>assets/img/logo/</code>. Ne jamais redessiner, déformer ni recolorer le logo : on utilise uniquement les versions blanche et noire.</p>
+  <div class="da-grid">
+    <div class="da-tile da-tile--dark"><img src="assets/img/logo/NASH_RECORD_NR_blanc.svg" alt=""><small>Monogramme NR · blanc sur sombre<br>Favicon, réseaux, merch, petits formats</small></div>
+    <div class="da-tile da-tile--dark"><img src="assets/img/logo/NASH_RECORD_nouveau_droit_blanc.svg" alt=""><small>Logo droit · blanc sur sombre<br>Héro du site, en-têtes, signatures</small></div>
+    <div class="da-tile da-tile--dark"><img src="assets/img/logo/NASH_RECORD_arc_empile_blanc.svg" alt=""><small>Logo arc empilé · blanc sur sombre<br>Formats carrés, affiches, stickers</small></div>
+    <div class="da-tile da-tile--light"><img src="assets/img/logo/NASH_RECORD_NR_noir.svg" alt=""><small>Monogramme NR · noir sur clair</small></div>
+    <div class="da-tile da-tile--light"><img src="assets/img/logo/NASH_RECORD_nouveau_droit_noir.svg" alt=""><small>Logo droit · noir sur clair</small></div>
+    <div class="da-tile da-tile--light"><img src="assets/img/logo/NASH_RECORD_arc_empile_noir.svg" alt=""><small>Logo arc empilé · noir sur clair</small></div>
+  </div>
+  <h3 style="font-family:var(--font-display);font-size:32px;margin:48px 0 16px">Zone de protection</h3>
+  <p class="intro">Autour du logo, garder un espace vide au moins égal à la moitié de la hauteur du monogramme (zone hachurée). Aucun texte, bord d'écran ou image ne doit y entrer. Taille mini à l'écran : 32 px de haut pour le NR, 120 px de large pour le logo droit. <em>(Règle proposée, à valider par Malik.)</em></p>
+  <div class="da-zone"><img src="assets/img/logo/NASH_RECORD_NR_blanc.svg" alt="Zone de protection du monogramme"></div>
+  <h3 style="font-family:var(--font-display);font-size:32px;margin:48px 0 16px">À ne pas faire</h3>
+  <div class="da-donts">
+    <div class="da-dont"><b>✕ DÉFORMER</b>Étirer, écraser ou incliner le logo.</div>
+    <div class="da-dont"><b>✕ RECOLORER</b>Logo en doré, en couleur ou en dégradé : uniquement blanc ou noir.</div>
+    <div class="da-dont"><b>✕ FOND CHARGÉ</b>Poser le logo sur une photo peu contrastée, ou sur le visage d'un artiste.</div>
+  </div>
+</section>
+
+<section class="da-s" id="couleurs">
+  <p class="eyebrow">02 · Couleurs</p><h2>Palette</h2>
+  <p class="intro">Identité noir / blanc / gris, avec un seul accent : l'or champagne, utilisé avec parcimonie (boutons principaux, chiffres forts, petits labels).</p>
+  <div class="da-pal">
+    <div class="da-sw"><div class="da-sw__c" style="background:#0a0a0a;"></div><b>Noir</b><code>#0a0a0a</code><code>--color-bg</code><span>Fond principal</span></div>
+    <div class="da-sw"><div class="da-sw__c" style="background:#141414;"></div><b>Noir doux</b><code>#141414</code><code>--color-bg-soft</code><span>Fonds de blocs</span></div>
+    <div class="da-sw"><div class="da-sw__c" style="background:#1c1c1c;"></div><b>Gris carte</b><code>#1c1c1c</code><code>--color-bg-elevated</code><span>Cartes, éléments surélevés</span></div>
+    <div class="da-sw"><div class="da-sw__c" style="background:#f5f5f5;border:1px solid #ccc;"></div><b>Blanc</b><code>#f5f5f5</code><code>--color-text</code><span>Titres et texte</span></div>
+    <div class="da-sw"><div class="da-sw__c" style="background:#c9a961;"></div><b>Or champagne</b><code>#c9a961</code><code>--color-accent</code><span>Accent unique Nash</span></div>
+    <div class="da-sw"><div class="da-sw__c" style="background:#e2c178;"></div><b>Or clair</b><code>#e2c178</code><code>--color-accent-hot</code><span>Survol des boutons or</span></div>
+    <div class="da-sw"><div class="da-sw__c" style="background:#a8a8a8;"></div><b>Gris texte</b><code>#a8a8a8</code><code>--color-text-muted</code><span>Texte courant secondaire</span></div>
+    <div class="da-sw"><div class="da-sw__c" style="background:#6b6b6b;"></div><b>Gris discret</b><code>#6b6b6b</code><code>--color-text-faint</code><span>Mentions, légendes</span></div>
+    <div class="da-sw"><div class="da-sw__c" style="background:rgba(255,255,255,.08);"></div><b>Ligne</b><code>rgba(255,255,255,.08)</code><code>--color-line</code><span>Séparateurs</span></div>
+  </div>
+  <p class="intro" style="margin-top:32px">Couleurs d'artiste, seulement sur leur propre page : Lola Rivera <code>#e63946</code> · Fish Killa <code>#ff6a1f</code> · El Kapell <code>#dc2626</code> / <code>#1e3a8a</code>.</p>
+</section>
+
+<section class="da-s" id="typo">
+  <p class="eyebrow">03 · Typographies</p><h2>Trois familles, trois rôles</h2>
+  <p class="intro">Le logo a sa propre typo custom, anguleuse : elle n'existe qu'en logo, on ne la recrée jamais en texte. Le site utilise trois polices Google Fonts.</p>
+  <div class="da-type"><div class="da-type__meta">Titres · Cormorant Garamond · 400 / italique</div><p style="font-family:var(--font-display);font-size:clamp(40px,6vw,72px);line-height:1">Le label <em style="color:var(--color-accent)">certifié Diamant</em></p></div>
+  <div class="da-type"><div class="da-type__meta">Texte · Inter · 300 / 400 / 500</div><p style="font-size:18px;color:var(--color-text-muted);max-width:640px">Booking d'artistes, session studio, presse ou envoi de démo : écris-nous, l'équipe Nash Record te répond. Taille 16–18 px, interligne confortable.</p></div>
+  <div class="da-type"><div class="da-type__meta">Labels · JetBrains Mono · majuscules espacées</div><p class="eyebrow" style="margin:0">Roster · Studio · Podcast · Booking</p></div>
+</section>
+
+<section class="da-s" id="composants">
+  <p class="eyebrow">04 · Composants</p><h2>Boutons &amp; cartes</h2>
+  <p class="intro">Un bouton or par écran pour l'action principale ; les autres en contour. Texte en majuscules espacées.</p>
+  <div class="btn-group" style="margin-top:0"><a class="btn btn--primary" href="#composants">Action principale</a><a class="btn btn--ghost" href="#composants">Action secondaire</a></div>
+  <div class="da-grid" style="margin-top:40px">
+    <div class="service"><div class="service__num">01 / CARTE SERVICE</div><h3 class="service__title">Studio</h3><p class="service__desc">Fond noir doux, bordure fine, numéro en mono.</p><a class="service__link" href="#composants">Lien d'action</a></div>
+    <a href="#composants" class="artist-card" style="aspect-ratio:4/5"><img src="assets/img/fish-killa-portrait.jpg" alt="" class="artist-card__photo" loading="lazy"><div class="artist-card__overlay"><div class="artist-card__name">Carte artiste</div><div class="artist-card__tag">Photo + dégradé noir + nom</div></div></a>
+    <div class="epk__box"><h3>Bloc d'info</h3><p style="color:var(--color-text-muted)">Coins arrondis 12 px, fond <code>#141414</code>, bordure <code>rgba(255,255,255,.08)</code>.</p></div>
+  </div>
+</section>
+
+<section class="da-s" id="espaces">
+  <p class="eyebrow">05 · Espacements</p><h2>Rythme et grille</h2>
+  <p class="intro">Échelle de 8 px. Contenu max 1280 px. Marges latérales 16 px sur mobile, jusqu'à 64 px sur grand écran. Sections aérées : 72 px (mobile) à 120 px (desktop). Arrondis : 4 px (boutons, champs), 12 px (cartes), 24 px (grands blocs).</p>
+  <div class="da-space">
+    <div><div style="width:8px;height:8px"></div><span>8</span></div>
+    <div><div style="width:16px;height:16px"></div><span>16</span></div>
+    <div><div style="width:24px;height:24px"></div><span>24</span></div>
+    <div><div style="width:32px;height:32px"></div><span>32</span></div>
+    <div><div style="width:48px;height:48px"></div><span>48</span></div>
+    <div><div style="width:64px;height:64px"></div><span>64</span></div>
+    <div><div style="width:120px;height:120px"></div><span>120</span></div>
+  </div>
+</section>
+
+<section class="da-s" id="ton" style="border-bottom:0">
+  <p class="eyebrow">06 · Ton éditorial</p><h2>Comment on parle</h2>
+  <p class="intro">Direct, fier, premium sans être froid. On tutoie le public et les artistes, on vouvoie seulement dans les échanges pro formels.</p>
+  <div class="da-tone">
+    <div><h3>Court et concret</h3><p>« Le label certifié disque de Diamant. » plutôt que de longues phrases. Des chiffres vrais, sourcés.</p></div>
+    <div><h3>Fier de ses racines</h3><p>Saint-Cloud, Paris, Conakry, Bezons, Madrid : on cite les lieux et les cultures des artistes.</p></div>
+    <div><h3>Jamais inventé</h3><p>Aucun chiffre, prix ou date non validé. Sinon : on n'affiche pas.</p></div>
+  </div>
+  <p class="intro" style="margin-top:32px">Exemples de boutons : « Réserver le studio » · « Booking » · « Voir le clip » · « Écouter sur Spotify ».</p>
+</section>
+
+</div>
+</body>
+</html>

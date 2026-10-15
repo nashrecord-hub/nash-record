@@ -54,6 +54,13 @@
  .mq-hero__inner{padding:0 32px 96px} .mq-sec{padding:120px 0}
 }
 @media(min-width:1100px){ .mq-artists{grid-template-columns:1.3fr 1fr} .mq-artists .mq-card:nth-child(4n+2),.mq-artists .mq-card:nth-child(4n+3){aspect-ratio:auto} }
+.mq-hero--logo{align-items:center;justify-content:center;text-align:center;background:radial-gradient(ellipse at 50% 40%,#1c1c1c 0%,#0a0a0a 70%)}
+.mq-hero--logo:after{background:repeating-linear-gradient(0deg,rgba(255,255,255,.015) 0 1px,transparent 1px 3px)}
+.mq-hero--logo .mq-hero__inner{padding:120px 16px 72px;display:flex;flex-direction:column;align-items:center}
+.mq-hero__nr{width:min(56vw,300px);height:auto}
+.mq-hero__word{width:min(82vw,560px);height:auto;margin-top:36px}
+.mq-hero .mq-hero__punch{font-family:var(--font-display);font-style:italic;font-size:clamp(24px,4vw,36px);color:var(--color-text);margin:12px auto 0;max-width:none}
+@keyframes mqfade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -73,13 +80,13 @@
 
 <div class="mq-mark">MAQUETTE · NON PUBLIÉE</div>
 
-<header class="mq-hero">
-  <img class="mq-hero__img" src="assets/img/sultan-nash-hero.jpg" alt="DJ Sultan Nash au studio Nash Record">
+<header class="mq-hero mq-hero--logo">
   <div class="mq-hero__inner">
-    <p class="eyebrow">Label indépendant · Studio · Podcast · Paris</p>
-    <h1>Nash<br><em>Record</em></h1>
-    <p>Le label certifié disque de Diamant. Des artistes, un studio, un plateau podcast.</p>
-    <div class="btn-group" style="margin-top:28px"><a href="#artistes" class="btn btn--primary">Les artistes</a><a href="#booking" class="btn btn--ghost">Booking</a></div>
+    <img class="mq-hero__nr" src="assets/img/logo/NASH_RECORD_NR_blanc.svg" alt="Monogramme NR">
+    <img class="mq-hero__word" src="assets/img/logo/NASH_RECORD_nouveau_droit_blanc.svg" alt="Nash Record">
+    <p class="eyebrow" style="margin-top:32px">Label · Studio · Podcast</p>
+    <p class="mq-hero__punch">Le label certifié disque de Diamant.</p>
+    <div class="btn-group" style="margin-top:32px;justify-content:center"><a href="#artistes" class="btn btn--primary">Les artistes</a><a href="#booking" class="btn btn--ghost">Booking</a></div>
   </div>
 </header>
 
