@@ -40,3 +40,11 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
+
+// Lite YouTube: charge l'iframe youtube-nocookie seulement au clic
+document.querySelectorAll('.clip__frame[data-yt]').forEach(function (el) {
+  el.addEventListener('click', function () {
+    var id = el.getAttribute('data-yt');
+    el.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0" title="' + (el.getAttribute('aria-label') || 'Clip') + '" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+  }, { once: true });
+});
